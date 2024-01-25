@@ -6,15 +6,12 @@
 #    By: tmichel- <tmichel-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:54:32 by tmichel-          #+#    #+#              #
-#    Updated: 2024/01/25 12:22:59 by tmichel-         ###   ########.fr        #
+#    Updated: 2024/01/25 12:24:32 by tmichel-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 from datetime import datetime
 import time
-import locale
-
-locale.setlocale(locale.LC_NUMERIC, "en_GB.UTF-8")
 
 date = datetime.now()
 elapsed_time = time.time()
