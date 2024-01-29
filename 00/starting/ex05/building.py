@@ -3,17 +3,19 @@ import sys
 
 def main():
     """
-    This program takes a string as parameters and displays the count of characters, upper and lower letters, punctuation marks,
+    This program takes a string as parameters and displays the count
+    of characters, upper and lower letters, punctuation marks,
     spaces and digits.
 
-    It reads the string character by character and uses basic methods such as isdigit(), isupper(), islower() or isspace()
+    It reads the string character by character and uses basic methods
+    such as isdigit(), isupper(), islower() or isspace()
     to increment counters.
     """
     ac = len(sys.argv)
     try:
-        if (len(sys.argv) == 2):
+        if (ac == 2):
             text = sys.argv[1]
-        elif (len(sys.argv) == 1):
+        elif (ac == 1):
             print("What is the text to count?")
             text = ""
             while True:
@@ -28,7 +30,7 @@ def main():
             raise AssertionError("More than one argument is provided")
 
         assert text, "Please provide a non-empty string"
-        
+
         index = digit = upper = lower = space = punct = 0
         while (index < len(text)):
             if (text[index].isdigit() == 1):
