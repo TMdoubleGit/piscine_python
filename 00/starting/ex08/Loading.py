@@ -26,4 +26,3 @@ def ft_tqdm(lst: range) -> None:
 
     yield item
     print()
-
