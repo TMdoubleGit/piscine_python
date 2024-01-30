@@ -9,10 +9,11 @@ class SimpleProgressBar:
     def update(self, progress):
         percent = progress / self.total
         bar_length = int(percent * self.length)
-        bar = ('|' + '=' * (bar_length - 1) + '>' +
+        bar = ('%|' + '=' * (bar_length - 1) + '>' +
                '-' * (self.length - bar_length) + '|')
         progress_str = f'{progress}/{self.total}'
-        print(f'\r{bar} {progress_str}', end='', flush=True)
+        displayed_percent = int(percent * 100)
+        print(f'\r{displayed_percent}{bar} {progress_str}', end='', flush=True)
 
 
 def ft_tqdm(lst: range) -> None:
@@ -23,7 +24,6 @@ def ft_tqdm(lst: range) -> None:
         time.sleep(0.05)
         progress_bar.update(i + 1)
 
+    yield item
     print()
 
-
-ft_tqdm(range(333))
