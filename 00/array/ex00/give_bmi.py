@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
     """
@@ -24,8 +25,8 @@ def give_bmi(height: list[int | float],
         bmi_list = []
 
         for h, w in zip(height, weight):
-                bmi = w / (h ** 2)
-                bmi_list.append(bmi)
+            bmi = w / (h ** 2)
+            bmi_list.append(bmi)
         return bmi_list
     except AssertionError as e:
         print(e)
@@ -46,14 +47,10 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
             "AssertionError: a list is composed of at least one item"
         assert all(isinstance(b, (int, float)) for b in bmi), \
             "AssertionError: arguments needs to be lists of int or float"
-        assert all(b > 0 for b in bmi), \
-            "AssertionError: elements of list should be positive"
+        assert all(b > 0 or not np.isnan(b) for b in bmi), \
+            "AssertionError: an item within the list is incorrect (< 0 or NaN)"
         for item in bmi:
-            if np.isnan(item):
-                raise AssertionError(
-                    "AssertionError: an item within the BMI list is incorrect")
-            else:
-                bool_list.append(item > limit)
+            bool_list.append(item > limit)
         return bool_list
     except AssertionError as e:
         print(e)
