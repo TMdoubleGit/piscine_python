@@ -57,8 +57,3 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         return []
 
 
-height = [2.71, 1.15]
-weight = [165.3, 55]
-bmi = give_bmi(height, weight)
-print(bmi, type(bmi))
-print(apply_limit(bmi, 26))

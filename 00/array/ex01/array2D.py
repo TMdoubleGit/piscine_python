@@ -33,9 +33,3 @@ def slice_me(family: list, start: int, end:int) -> list:
         print(e)
         print("Returning the original array")
         return family
-
-family = [[1.80, 78.4],
-[2.15, 102.7],
-[2.10, 98.5],
-[1.88, 75.2]]
-print(slice_me(family, "a", 4))
