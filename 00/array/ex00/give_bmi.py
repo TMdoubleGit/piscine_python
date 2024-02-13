@@ -55,5 +55,3 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     except AssertionError as e:
         print(e)
         return []
-
-
