@@ -43,3 +43,6 @@ def ft_load(path: str) -> str:
         print(e)
         pixels = "Returning an error message"
         return pixels
+
+
+print(ft_load("animal.jpeg"))
