@@ -8,7 +8,7 @@ def main():
     This is the main function of the program.
     The program will load an image from a file,
     then make a zoom using a slicing method, turning
-    it to gray color and will display it.
+    it to gray color, transposes it and will display it.
     """
     try:
         path = "animal.jpeg"
@@ -18,17 +18,17 @@ def main():
 
         print (img)
 
-        zoomed_img = img[200:600, 400:800]
-        zoomed_img = Image.fromarray(zoomed_img).convert("L")
-
-        print(f"New shape after slicing: {zoomed_img.size}")
-        print(np.array(zoomed_img))
-        plt.imshow(zoomed_img, cmap='gray')
+        new_img = img[200:600, 400:800]
+        new_img = np.array(list(zip(*new_img)))
+        new_img = Image.fromarray(new_img).convert("L")
+        print(f"New shape after slicing: {new_img.size}")
+        print(np.array(new_img))
+        plt.imshow(new_img, cmap='gray')
         plt.axis('on')
         plt.show()
     
-    except AssertionError as e:
-        print(AssertionError.__name__, ":", e)
+    except FileNotFoundError as e:
+        print(f"{e}")
         exit(1)
 
 if __name__ == "__main__":
