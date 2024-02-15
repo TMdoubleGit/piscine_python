@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def main():
     """
     This is the main function of the program.
@@ -16,7 +17,7 @@ def main():
         if img is None:
             raise FileNotFoundError("File not found.")
 
-        print (img)
+        print(img)
 
         new_img = img[200:600, 400:800]
         new_img = np.array(list(zip(*new_img)))
@@ -26,10 +27,11 @@ def main():
         plt.imshow(new_img, cmap='gray')
         plt.axis('on')
         plt.show()
-    
+
     except FileNotFoundError as e:
         print(f"{e}")
         exit(1)
+
 
 if __name__ == "__main__":
     main()

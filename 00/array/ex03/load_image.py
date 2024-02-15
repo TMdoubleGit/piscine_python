@@ -24,5 +24,5 @@ def ft_load(path: str) -> str:
 
     except AssertionError as e:
         print(e)
-        img = "Returning an error message"
+        img = None
         return img

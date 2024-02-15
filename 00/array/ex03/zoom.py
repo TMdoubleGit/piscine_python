@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def main():
     """
     This is the main function of the program.
@@ -14,9 +15,9 @@ def main():
         path = "animal.jpeg"
         img = ft_load(path)
         if img is None:
-            raise FileNotFoundError("File not found.")
+            exit(1)
 
-        print (img)
+        print(img)
 
         zoomed_img = img[200:600, 400:800]
         zoomed_img = Image.fromarray(zoomed_img).convert("L")
@@ -26,10 +27,11 @@ def main():
         plt.imshow(zoomed_img, cmap='gray')
         plt.axis('on')
         plt.show()
-    
+
     except AssertionError as e:
         print(AssertionError.__name__, ":", e)
         exit(1)
+
 
 if __name__ == "__main__":
     main()

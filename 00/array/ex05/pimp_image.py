@@ -1,6 +1,6 @@
-from load_image import ft_load
 from PIL import Image
 import numpy as np
+
 
 def ft_invert(array) -> np.ndarray:
     """
@@ -10,6 +10,7 @@ def ft_invert(array) -> np.ndarray:
     Image.fromarray(image).show()
     print(image)
     return (image)
+
 
 def ft_red(array) -> np.ndarray:
     """
@@ -34,6 +35,7 @@ def ft_green(array) -> np.ndarray:
     print(image)
     return image
 
+
 def ft_blue(array) -> np.ndarray:
     """
     Applies a blue filter on the image received.
@@ -45,6 +47,7 @@ def ft_blue(array) -> np.ndarray:
     print(image)
     return image
 
+
 def ft_grey(array) -> np.ndarray:
     """
     Applies a blue filter on the image received.
@@ -55,14 +58,3 @@ def ft_grey(array) -> np.ndarray:
     print(image)
     Image.fromarray(image).show()
     return image
-
-
-array = ft_load("landscape.jpg")
-
-ft_invert(array)
-ft_red(array)
-ft_green(array)
-ft_blue(array)
-ft_grey(array)
-
-print(ft_invert.__doc__)
