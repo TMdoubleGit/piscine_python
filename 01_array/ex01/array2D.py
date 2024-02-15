@@ -28,7 +28,7 @@ def slice_me(family: list, start: int, end: int) -> list:
                 res = []
         else:
             print("My new shape is : ( 1 ,", columns, " )")
-            res = family[start]
+            res = family[start:end]
 
         return res
 

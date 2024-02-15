@@ -19,11 +19,11 @@ def main():
 
         print(img)
 
-        zoomed_img = img[200:600, 400:800]
-        zoomed_img = Image.fromarray(zoomed_img).convert("L")
+        zoomed_img = img[200:600, 400:800, :1]
 
-        print(f"New shape after slicing: {zoomed_img.size}")
-        print(np.array(zoomed_img))
+        to_print = np.array(zoomed_img)
+        print(f"New shape after slicing: {to_print.shape}")
+        print(np.array(to_print))
         plt.imshow(zoomed_img, cmap='gray')
         plt.axis('on')
         plt.show()

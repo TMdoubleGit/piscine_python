@@ -21,8 +21,8 @@ def main():
 
         new_img = img[200:600, 400:800]
         new_img = np.array(list(zip(*new_img)))
-        new_img = Image.fromarray(new_img).convert("L")
-        print(f"New shape after slicing: {new_img.size}")
+
+        print(f"New shape after slicing: {new_img.shape}")
         print(np.array(new_img))
         plt.imshow(new_img, cmap='gray')
         plt.axis('on')
