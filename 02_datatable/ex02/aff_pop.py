@@ -17,6 +17,10 @@ def clean_data(data):
 
 
 def main():
+    """
+    This program loads the French and Belgium population from 1800
+    and makes projections until 2050.
+    """
     df = load("population_total.csv")
 
     france = df.set_index('country').loc['France'][:251].apply(clean_data)
